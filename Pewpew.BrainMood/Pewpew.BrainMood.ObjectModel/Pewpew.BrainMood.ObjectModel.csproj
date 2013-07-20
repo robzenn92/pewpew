@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{9CD3B488-BCDA-434E-ACE3-DB4973B8BEB6}</ProjectGuid>
+    <ProjectGuid>{9947505A-7DF2-4802-8687-37DEEB8F19FF}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Pewpew.BrainMood.DataManagement</RootNamespace>
-    <AssemblyName>Pewpew.BrainMood.DataManagement</AssemblyName>
+    <RootNamespace>Pewpew.BrainMood.ObjectModel</RootNamespace>
+    <AssemblyName>Pewpew.BrainMood.ObjectModel</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Calculator.cs" />
+    <Compile Include="Detection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace Pewpew.BrainMood.DataManagement
 {
-    public class Class1
-    {
-    }
+	public class Calculator
+	{
+		
+	}
 }
