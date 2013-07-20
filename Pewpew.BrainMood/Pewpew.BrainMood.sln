@@ -16,6 +16,12 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pewpew.BrainMood.Balance", "Pewpew.BrainMood.Balance\Pewpew.BrainMood.Balance.csproj", "{468D9B0A-B832-4E04-AF36-01337BC54F0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pewpew.BrainMood.Flickr", "Pewpew.BrainMood.Flickr\Pewpew.BrainMood.Flickr.csproj", "{2B2FA916-447C-4BC0-9A3E-112F2E2E0979}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A181EC1C-510A-49F3-BD8C-34050B521575}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

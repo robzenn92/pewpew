@@ -28,23 +28,23 @@ namespace Pewpew.BrainMood.DataManagement
 
 		#region Detection
 
-		public const string DetectionQueueName = "DetectionQueue";
+		public const string DetectionQueueName = "detectionqueue";
 
-		public static void Enqueue(DetectionEntity detection)
+		public static void EnqueueList(IEnumerable<DetectionEntity> detections)
 		{
-			string message = JsonConvert.SerializeObject(detection);
+			string message = JsonConvert.SerializeObject(detections);
 			queue.AddMessage(new CloudQueueMessage(message));
 		}
 
-		public static DetectionEntity Dequeue()
+		public static IEnumerable<DetectionEntity> DequeueList()
 		{
 			CloudQueueMessage message = queue.GetMessage();
 			if (message == null)
 				return null;
 
-			DetectionEntity detection = JsonConvert.DeserializeObject<DetectionEntity>(message.AsString);
+			IEnumerable<DetectionEntity> detections = JsonConvert.DeserializeObject<IEnumerable<DetectionEntity>>(message.AsString);
 			queue.DeleteMessage(message);
-			return detection;
+			return detections;
 		}
 
 		#endregion Detection

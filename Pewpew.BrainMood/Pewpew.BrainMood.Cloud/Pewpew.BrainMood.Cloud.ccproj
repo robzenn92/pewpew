@@ -48,9 +48,13 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pewpew.BrainMood.BalanceContent\" />
+    <Folder Include="Pewpew.BrainMood.ServicesContent\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pewpew.BrainMood.BalanceContent\diagnostics.wadcfg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pewpew.BrainMood.ServicesContent\diagnostics.wadcfg">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>
