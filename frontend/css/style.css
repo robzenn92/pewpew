@@ -1,0 +1,140 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:300);
+
+html, body {
+	margin: 0;
+	padding: 0;
+	display: block;
+	background-color: #fc545a;
+	height: 100%;
+}
+
+body {
+	padding: 0 1rem;
+	font-family: 'Lato', sans-serif;
+}
+
+.main {
+	float: left;
+	display: block;
+	width: 100%;
+	background-color: #fefefe;
+	overflow: hidden;
+	box-shadow: 0 0 2px #020202;
+	padding-bottom: 40px;
+}
+
+.box {
+	display: block;
+	float: left;
+	margin: 1rem 1rem;
+	box-shadow: inset 0 0 3px #020202;
+}
+
+.img {
+	width: -webkit-calc(40% - 2rem);
+	width: calc(40% - 2rem);
+	height: 20rem;
+}
+
+.chart {
+	width: -webkit-calc(60% - 1rem);
+	width: calc(60% - 1rem);
+	margin-left: 0;
+	height: 20rem;
+	float: right;
+}
+
+.icons {
+	width: 12rem;
+	height: 6rem;
+	overflow: hidden;
+	margin: 0 auto;
+}
+
+.icon {
+	width: 5rem;
+	height: 5rem;
+	border-radius: 5rem;
+	box-shadow: inset 0 0 3px #020202;
+	float: left;
+	margin: 0 0 1rem 1rem;
+}
+
+.status {
+	float: left;
+	width: 100%;
+	position: relative;
+	height: 30rem;
+	overflow: hidden;
+}
+
+.status img {
+	width: 100%;
+	display: block;
+	position: absolute;
+	top: 0;
+}
+
+.status aside {
+	position: fixed;
+	z-index: 3;
+	top: 0;
+	font-size: 3rem;
+	width: -webkit-calc(100% - 2rem);
+	width: calc(100% - 2rem);
+	background-color: #ddd;
+	color: #555;
+	text-align: center;
+	opacity: 0.8;
+	box-shadow: 0 1px 2px -1px #020202;
+}
+
+.audio {
+	width: -webkit-calc(100% - 2rem);
+	width: calc(100% - 2rem);
+	position: fixed;
+	bottom: 0;
+	opacity: 0.8;
+	box-shadow: 0 -1px 2px -1px #020202;
+}
+
+.audio:hover {
+	opacity: 1;
+}
+
+@media only screen
+and (max-width : 768px) {
+	.img {
+		width: -webkit-calc(100% - 2rem);
+		width: calc(100% - 2rem);
+		height: 10rem;
+	}
+
+	.status {
+		height: 10rem;
+	}
+
+	.chart {
+		width: -webkit-calc(100% - 2rem);
+		width: calc(100% - 2rem);
+		height: 5rem;
+		margin-left: 1rem;
+		margin-top: 0;
+	}
+
+	.icons {
+		width: 100%;
+		height: 3rem;
+	}
+
+	.icon {
+		width: -webkit-calc(50% - 1.5rem);
+		width: calc(50% - 1.5rem);
+		height: 2rem;
+		border-radius: 0;
+	}
+
+	.status aside {
+		font-size: 1.5rem;
+	}
+}
