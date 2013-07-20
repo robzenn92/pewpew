@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pewpew.BrainMood.DataManage
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pewpew.BrainMood.ObjectModel", "Pewpew.BrainMood.ObjectModel\Pewpew.BrainMood.ObjectModel.csproj", "{9947505A-7DF2-4802-8687-37DEEB8F19FF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pewpew.BrainMood.Simulator", "Pewpew.BrainMood.Simulator\Pewpew.BrainMood.Simulator.csproj", "{1C9A44AB-9A51-4677-BCA1-726E47E91577}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{9947505A-7DF2-4802-8687-37DEEB8F19FF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9947505A-7DF2-4802-8687-37DEEB8F19FF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9947505A-7DF2-4802-8687-37DEEB8F19FF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1C9A44AB-9A51-4677-BCA1-726E47E91577}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1C9A44AB-9A51-4677-BCA1-726E47E91577}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1C9A44AB-9A51-4677-BCA1-726E47E91577}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1C9A44AB-9A51-4677-BCA1-726E47E91577}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -6,14 +6,10 @@ using System.Threading.Tasks;
 
 namespace Pewpew.BrainMood.ObjectModel
 {
-	public class Detection
+	public class DetectionResult
 	{
-
-		public long Value { get; set; }
+		public double Average { get; set; }
 
 		public int TypeOfFrequency { get; set; }
-
-		public double StandardDerivation { get; set; }
-
 	}
 }
