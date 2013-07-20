@@ -4,12 +4,10 @@ html, body {
 	margin: 0;
 	padding: 0;
 	display: block;
-	background-color: #fc545a;
 	height: 100%;
 }
 
 body {
-	padding: 0 1rem;
 	font-family: 'Lato', sans-serif;
 }
 
@@ -21,6 +19,7 @@ body {
 	overflow: hidden;
 	box-shadow: 0 0 2px #020202;
 	padding-bottom: 40px;
+	overflow-x: hidden;
 }
 
 .box {
@@ -75,13 +74,22 @@ body {
 	top: 0;
 }
 
+.status .mask {
+	box-shadow: inset 0 0 3px #020202;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 10;
+}
+
 .status aside {
 	position: fixed;
 	z-index: 3;
 	top: 0;
 	font-size: 3rem;
-	width: -webkit-calc(100% - 2rem);
-	width: calc(100% - 2rem);
+	width: 100%;
 	background-color: #ddd;
 	color: #555;
 	text-align: center;
@@ -90,12 +98,12 @@ body {
 }
 
 .audio {
-	width: -webkit-calc(100% - 2rem);
-	width: calc(100% - 2rem);
+	width: 100%;
 	position: fixed;
 	bottom: 0;
 	opacity: 0.8;
 	box-shadow: 0 -1px 2px -1px #020202;
+	z-index: 100;
 }
 
 .audio:hover {

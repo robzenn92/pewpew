@@ -1,5 +1,5 @@
 <!DOCTYPE html5>
-<html>
+<html ng-app>
 	<head>
 		<meta charset="utf-8" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -9,6 +9,8 @@
 		<link rel="apple-touch-icon" href="./icon.png" />
 		<link rel="shortcut icon" href="./icon.png" />
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
+		<script src="http://code.angularjs.org/1.0.7/angular-resource.min.js"></script>
 		<script src="./scripts/audioplayer.min.js"></script>
 		<script type="text/javascript" src="./scripts/script.js"></script>
 		<title>BrainMood</title>
@@ -16,6 +18,7 @@
 	<body>
 		<section class="main">
 			<div class="status">
+				<div class="mask"></div>
 				<img src="http://distilleryimage8.s3.amazonaws.com/7185e010f12911e2918122000a9f0a12_7.jpg" />
 				<aside>Artist - Title</aside>
 			</div>
