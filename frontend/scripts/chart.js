@@ -19,7 +19,7 @@
 			};
 
 			var res = [];
-			$.getJSON("file.json", function(asd) {
+			$.getJSON("https://github.com/robzenn92/pewpew/blob/master/frontend/file.json", function(asd) {
 				data.push(asd.meditazione);
 				j = 0;
 				for (var i = data.length - 1; i >= 0 ; i--) {
@@ -32,7 +32,7 @@
 
 		var updateInterval = 3000;
 
-		var plot = $.plot("#placeholder", [ readNewValue() ], {
+		var plot = $.plot("#chart", [ readNewValue() ], {
 			series: {
 				shadowSize: 0	// Drawing is faster without shadows
 			},
