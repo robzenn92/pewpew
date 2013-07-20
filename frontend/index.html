@@ -11,28 +11,33 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.1/jquery.min.js"></script>
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
 		<script src="http://code.angularjs.org/1.0.7/angular-resource.min.js"></script>
+		<script src="http://www.flotcharts.org/flot/jquery.flot.js"></script>
 		<script src="./scripts/audioplayer.min.js"></script>
 		<script type="text/javascript" src="./scripts/script.js"></script>
 		<title>BrainMood</title>
 	</head>
-	<body>
-		<section ng-controller="mainCtrl" class="main">
-			<div class="status">
-				<div class="mask"></div>
-				<img class="show-{{isShown}}" ng-src="{{image}}" />
-				<img class="show-{{!isShown}}" ng-src="{{image2}}" />
-				<aside>{{artist}} - {{title}}</aside>
-			</div>
-			<section class="box img">
+	<body ng-controller="mainCtrl">
+		<aside>{{artist}} - {{title}}</aside>
+		<section class="content">
+			<section class="main">
+				<div class="status">
+					<div class="mask"></div>
+					<img class="show-{{isShown}}" ng-src="{{image}}" />
+					<img class="show-{{!isShown}}" ng-src="{{image2}}" />
+				</div>
+				<section class="box img">
+				</section>
+				<section class="box chart">
+					<div id="placeholder" class="demo-placeholder"></div>
+				</section>
+				<section class="icons">
+					<div class="icon color" ng-style="{backgroundColor: color}"></div>
+					<div class="icon mood"><p>{{mood}}</p></div>
+				</section>
 			</section>
-			<section class="box chart"></section>
-			<section class="icons">
-				<div class="icon color" ng-style="{backgroundColor: color}"></div>
-				<div class="icon mood"><p>{{mood}}</p></div>
-			</section>
-			<section class="audio">
-				<audio src="{{audio}}" preload="auto" controls></audio>
-			</section>
+		</section>
+		<section class="audio">
+			<audio src="{{audio}}" preload="auto" controls autoplay></audio>
 		</section>
 	</body>
 </html>

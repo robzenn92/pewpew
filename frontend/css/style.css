@@ -9,6 +9,15 @@ html, body {
 
 body {
 	font-family: 'Lato', sans-serif;
+	-webkit-overflow-scrolling: touch;
+	overflow: auto;
+}
+
+.content {
+	float: left;
+	height: 100%;
+	overflow: auto;
+	width: 100%;
 }
 
 .main {
@@ -19,7 +28,6 @@ body {
 	overflow: hidden;
 	box-shadow: 0 0 2px #020202;
 	padding-bottom: 40px;
-	overflow-x: hidden;
 }
 
 .box {
@@ -68,7 +76,7 @@ body {
 	float: left;
 	width: 100%;
 	position: relative;
-	height: 30rem;
+	height: 60%;
 	overflow: hidden;
 }
 
@@ -99,7 +107,7 @@ body {
 	opacity: 0;
 }
 
-.status aside {
+aside {
 	position: fixed;
 	z-index: 3;
 	top: 0;
@@ -134,7 +142,7 @@ and (max-width : 768px) {
 	}
 
 	.status {
-		height: 10rem;
+		height: 40%;
 	}
 
 	.chart {
@@ -157,8 +165,12 @@ and (max-width : 768px) {
 		border-radius: 0;
 	}
 
-	.status aside {
+	aside {
 		font-size: 1.5rem;
+	}
+
+	.status img {
+		top: 0;
 	}
 
 	.mood p {

@@ -30,6 +30,22 @@ namespace Pewpew.BrainMood.Stereo
             TotalPages["CRAZY"] = 19;
         }
 
+        public string GetSong(String mood) {
+            switch (mood)
+            {
+                case "HAPPY":
+                    return this.GetSong(Moods.type.HAPPY);
+                case "SAD":
+                    return this.GetSong(Moods.type.SAD);
+                case "RELAXED":
+                    return this.GetSong(Moods.type.RELAXED);
+                case "CRAZY":
+                    return this.GetSong(Moods.type.CRAZY);
+                default:
+                    return null;
+            }
+        }
+
         public string GetSong(Enum mood)
         {
             Random randomizer = new Random();
