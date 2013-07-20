@@ -11,20 +11,27 @@ namespace Pewpew.BrainMood.Stereo
 {
     public class StereoMoodApi
     {
-        private static int SongIndex { get; set; }
+        private static Dictionary<string, int> SongIndexes { get; set; }
         private const string ApiKey = "201106acca1d39ef81f8ab793c51699a051e5080e";
 
         public StereoMoodApi()
         {
-            SongIndex = 0;
+            SongIndexes = new Dictionary<string, int>();
+
+            SongIndexes["HAPPY"] = 0;
+            SongIndexes["SAD"] = 0;
+            SongIndexes["RELAXED"] = 0;
+            SongIndexes["CRAZY"] = 0;
+
         }
 
         public string GetSong(Enum mood)
         {
             var url = string.Format(
-                "http://www.stereomood.com/api/search.json?api_key={0}&type=mood&q={1}",
+                "http://www.stereomood.com/api/search.json?api_key={0}&type=mood&q={1}&page={2}",
                 ApiKey,
-                mood.ToString()
+                mood.ToString(),
+                (SongIndexes[mood.ToString()] / 20) + 1
             );
 
             WebClient wc = new WebClient();
@@ -37,11 +44,13 @@ namespace Pewpew.BrainMood.Stereo
             object jsonObject = new
             {
                 Mood = mood.ToString(),
-                Id = target.songs[SongIndex].id,
-                Title = target.songs[SongIndex].title,
-                Url = target.songs[SongIndex].audio_url,
-                Artist = target.songs[SongIndex++].artist
+                Id = target.songs[SongIndexes[mood.ToString()]].id,
+                Title = target.songs[SongIndexes[mood.ToString()]].title,
+                Url = target.songs[SongIndexes[mood.ToString()]].audio_url,
+                Artist = target.songs[SongIndexes[mood.ToString()]].artist
             };
+
+            SongIndexes[mood.ToString()] = SongIndexes[mood.ToString()] % 20;
 
             return JsonConvert.SerializeObject(jsonObject);
         }
