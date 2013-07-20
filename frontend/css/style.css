@@ -77,6 +77,8 @@ body {
 	display: block;
 	position: absolute;
 	top: -300;
+	-webkit-transition: 0.5s all ease-out;
+	transition: 0.5s all ease-out;
 }
 
 .status .mask {
@@ -87,6 +89,14 @@ body {
 	top: 0;
 	right: 0;
 	z-index: 10;
+}
+
+.show-true {
+	opacity: 1;
+}
+
+.show-false {
+	opacity: 0;
 }
 
 .status aside {
@@ -149,5 +159,9 @@ and (max-width : 768px) {
 
 	.status aside {
 		font-size: 1.5rem;
+	}
+
+	.mood p {
+		margin: 0.4rem 0 0;
 	}
 }

@@ -19,10 +19,12 @@
 		<section ng-controller="mainCtrl" class="main">
 			<div class="status">
 				<div class="mask"></div>
-				<img src="{{image}}" />
+				<img class="show-{{isShown}}" ng-src="{{image}}" />
+				<img class="show-{{!isShown}}" ng-src="{{image2}}" />
 				<aside>{{artist}} - {{title}}</aside>
 			</div>
-			<section class="box img"></section>
+			<section class="box img">
+			</section>
 			<section class="box chart"></section>
 			<section class="icons">
 				<div class="icon color" ng-style="{backgroundColor: color}"></div>
