@@ -10,10 +10,10 @@ namespace Pewpew.BrainMood.ObjectModel.ServiceModel
 	[DataContract]
 	public class DetectionDTO
 	{
-		[DataMember(Name = "value")]
-		public long Value { get; set; }
+		[DataMember(Name = "meditation")]
+		public long Meditation { get; set; }
 
-		[DataMember(Name = "typeOfFrequency")]
-		public int TypeOfFrequency { get; set; }
+		[DataMember(Name = "attention")]
+		public long Attention { get; set; }
 	}
 }

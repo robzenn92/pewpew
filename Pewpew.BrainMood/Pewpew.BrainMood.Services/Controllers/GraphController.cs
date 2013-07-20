@@ -12,15 +12,9 @@ namespace Pewpew.BrainMood.Services.Controllers
 	public class GraphController : ApiController
 	{
 
-		public IEnumerable<DetectionDTO> Get()
+		public DetectionDTO Get()
 		{
-			return GraphManager.GetLastDetection()
-					.ToList()
-					.Select(x => new DetectionDTO()
-					{
-						TypeOfFrequency = x.TypeOfFrequency,
-						Value = x.Value
-					});
+			return GraphManager.GetLastDetection();
 		}
 	}
 }
