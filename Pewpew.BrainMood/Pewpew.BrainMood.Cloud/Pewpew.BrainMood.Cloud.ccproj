@@ -45,12 +45,24 @@
       <RoleName>Pewpew.BrainMood.Balance</RoleName>
       <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
     </ProjectReference>
+    <ProjectReference Include="..\Pewpew.BrainMood.Services\Pewpew.BrainMood.Services.csproj">
+      <Name>Pewpew.BrainMood.Services</Name>
+      <Project>{04e074b4-7de2-4e26-9240-7ee4eb10a35f}</Project>
+      <Private>True</Private>
+      <RoleType>Web</RoleType>
+      <RoleName>Pewpew.BrainMood.Services</RoleName>
+      <UpdateDiagnosticsConnectionStringOnPublish>True</UpdateDiagnosticsConnectionStringOnPublish>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Pewpew.BrainMood.BalanceContent\" />
+    <Folder Include="Pewpew.BrainMood.ServicesContent\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Pewpew.BrainMood.BalanceContent\diagnostics.wadcfg">
+      <SubType>Content</SubType>
+    </Content>
+    <Content Include="Pewpew.BrainMood.ServicesContent\diagnostics.wadcfg">
       <SubType>Content</SubType>
     </Content>
   </ItemGroup>

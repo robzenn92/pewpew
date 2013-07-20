@@ -14,16 +14,29 @@ namespace Pewpew.BrainMood.Services.Controllers
     {
 
 
-		public void Get(IEnumerable<Detection> datas)
+		public void Get([FromBody]long att, [FromBody]long med)
 		{
 			Guid sequence = Guid.NewGuid();
-			QueueStorageContext.EnqueueList(datas.Select(x => new DetectionEntity()
-				{
-					Id = Guid.NewGuid(),
-					SequenceId = sequence,
-					TypeOfFrequency = x.TypeOfFrequency,
-					Value = x.Value
-				}));
+			DetectionEntity attention = new DetectionEntity()
+			{
+				Id = Guid.NewGuid(),
+				SequenceId = sequence,
+				TypeOfFrequency = 0,
+				Value = att,
+				InsertDateTime = DateTime.Now,
+			};
+			DetectionEntity meditetion = new DetectionEntity()
+			{
+				Id = Guid.NewGuid(),
+				SequenceId = sequence,
+				TypeOfFrequency = 1,
+				Value = med,
+				InsertDateTime = DateTime.Now,
+			};
+			List<DetectionEntity> datas = new List<DetectionEntity>();
+			datas.Add(attention);
+			datas.Add(meditetion);
+			QueueStorageContext.EnqueueList(datas);
 		}
 
 

@@ -27,7 +27,7 @@ namespace Pewpew.BrainMood.DataManagement
 				lastUpdate = DateTime.Now.AddMinutes(-1);
 
 			return (from x in Context.DetectionTable
-					where x.InsertDateTime > lastUpdate
+					where x.InsertDateTime.Ticks > lastUpdate.Ticks
 					select x)
 					.AsQueryable();
 		}
