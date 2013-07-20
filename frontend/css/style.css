@@ -50,6 +50,11 @@ body {
 	margin: 0 auto;
 }
 
+.mood p {
+	margin: 1.8rem 0 0;
+	text-align: center;
+}
+
 .icon {
 	width: 5rem;
 	height: 5rem;
