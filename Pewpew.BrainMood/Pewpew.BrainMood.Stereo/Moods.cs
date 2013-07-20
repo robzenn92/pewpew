@@ -12,9 +12,8 @@ namespace Pewpew.BrainMood.Stereo
         {
             HAPPY = 0,
             SAD = 1,
-            CONCENTRATED = 2,
-            RELAXED = 3,
-            CRAZY = 4,
+            RELAXED = 2,
+            CRAZY = 3,
         };
     }
 }
