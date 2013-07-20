@@ -40,7 +40,7 @@ namespace Pewpew.BrainMood.Simulator
 
 					Calculator calc = new Calculator();
 					QueueStorageContext.EnqueueList(detectEntityList);
-					Thread.Sleep(1000);
+					Thread.Sleep(5000);
 					Console.WriteLine("{0} item", i);
 				}
 
