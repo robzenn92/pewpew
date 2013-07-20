@@ -67,6 +67,7 @@
   <ItemGroup>
     <Compile Include="CacheManager.cs" />
     <Compile Include="Calculator.cs" />
+    <Compile Include="GraphManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueueStorageContext.cs" />
     <Compile Include="TableStorageContext.cs" />

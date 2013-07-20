@@ -23,7 +23,7 @@ namespace Pewpew.BrainMood.Services.Controllers
 				SequenceId = sequence,
 				TypeOfFrequency = 0,
 				Value = att,
-				InsertDateTime = DateTime.Now,
+				InsertDateTime = DateTime.Now.Ticks,
 			};
 			DetectionEntity meditetion = new DetectionEntity()
 			{
@@ -31,7 +31,7 @@ namespace Pewpew.BrainMood.Services.Controllers
 				SequenceId = sequence,
 				TypeOfFrequency = 1,
 				Value = med,
-				InsertDateTime = DateTime.Now,
+				InsertDateTime = DateTime.Now.Ticks,
 			};
 			List<DetectionEntity> datas = new List<DetectionEntity>();
 			datas.Add(attention);

@@ -27,14 +27,15 @@ namespace Pewpew.BrainMood.DataManagement
 				lastUpdate = DateTime.Now.AddMinutes(-1);
 
 			return (from x in Context.DetectionTable
-					where x.InsertDateTime.Ticks > lastUpdate.Ticks
+					where x.InsertDateTime > lastUpdate.Ticks
 					select x)
-					.AsQueryable();
+					.AsQueryable<DetectionEntity>();
 		}
 
 		public IQueryable<DetectionResult> CalculateAVG()
 		{
-			var detectionList = ReadDetection();
+			var detectionList = ReadDetection().ToList();
+			
 			var item = (from x in detectionList
 						group x by new { x.TypeOfFrequency } into grp
 						select new DetectionResult
@@ -46,7 +47,7 @@ namespace Pewpew.BrainMood.DataManagement
 			return item;
 		}
 
-		public IQueryable<DetectionResult> CalculateAVG(IQueryable<DetectionEntity> detectionList)
+		public IQueryable<DetectionResult> CalculateAVG(IEnumerable<DetectionEntity> detectionList)
 		{
 			var item = (from x in detectionList
 						group x by new { x.TypeOfFrequency } into grp
@@ -61,8 +62,8 @@ namespace Pewpew.BrainMood.DataManagement
 
 		public IQueryable<Detection> CalculateStandardDerivation()
 		{
-			var detectionList = ReadDetection();
-			var average = CalculateAVG(detectionList);
+			var detectionList = ReadDetection().ToList();
+			var average = CalculateAVG(detectionList).ToList();
 			List<Detection> resultList = new List<Detection>();
 			object locker = new object();
 

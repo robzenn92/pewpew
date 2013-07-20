@@ -68,7 +68,7 @@ namespace Pewpew.BrainMood.DataManagement
 		{
 			foreach (var item in detections)
 			{
-				item.InsertDateTime = DateTime.Now;
+				item.InsertDateTime = DateTime.Now.Ticks;
 				AddDetection(item);
 			}
 

@@ -33,7 +33,7 @@ namespace Pewpew.BrainMood.ObjectModel.AzureModel
 
 		public int TypeOfFrequency { get; set; }
 
-		public DateTime InsertDateTime { get; set; }
+		public long InsertDateTime { get; set; }
 
 	}
 }
