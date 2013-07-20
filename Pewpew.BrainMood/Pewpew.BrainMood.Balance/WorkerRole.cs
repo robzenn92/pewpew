@@ -7,7 +7,6 @@ using System.Threading;
 using Microsoft.WindowsAzure;
 using Microsoft.WindowsAzure.Diagnostics;
 using Microsoft.WindowsAzure.ServiceRuntime;
-using Microsoft.WindowsAzure.Storage;
 using Pewpew.BrainMood.DataManagement;
 
 namespace Pewpew.BrainMood.Balance
@@ -26,10 +25,10 @@ namespace Pewpew.BrainMood.Balance
 
 			while (true)
 			{
-				var detection = QueueStorageContext.Dequeue();
+				var detections = QueueStorageContext.DequeueList();
 
-				if (detection != null)
-					TableContext.AddDetection(detection);
+				if (detections != null)
+					TableContext.SaveDetection(detections, Guid.NewGuid());
 			}
 		}
 

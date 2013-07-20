@@ -51,9 +51,6 @@ namespace Pewpew.BrainMood.DataManagement
 
 		private const string DetectionTableName = "DetectionTable";
 
-		/// <summary>
-		/// Gestisce la tabella delle rilevazioni
-		/// </summary>
 		public IQueryable<DetectionEntity> DetectionTable
 		{
 			get
@@ -67,7 +64,19 @@ namespace Pewpew.BrainMood.DataManagement
 			this.AddObject(DetectionTableName, item);
 		}
 
+		public void SaveDetection(IEnumerable<DetectionEntity> detections, Guid sequenceId)
+		{
+			foreach (var item in detections)
+			{
+				item.InsertDateTime = DateTime.Now;
+				AddDetection(item);
+			}
+
+			SaveChanges();
+		}
+
 		#endregion Detection
+
 
 	}
 }

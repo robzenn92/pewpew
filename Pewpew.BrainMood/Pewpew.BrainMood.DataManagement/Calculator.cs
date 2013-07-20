@@ -3,6 +3,7 @@ using Pewpew.BrainMood.ObjectModel.AzureModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Caching;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,7 +11,6 @@ namespace Pewpew.BrainMood.DataManagement
 {
 	public class Calculator
 	{
-
 		private TableStorageContext Context { get; set; }
 
 		public Calculator()
@@ -18,56 +18,23 @@ namespace Pewpew.BrainMood.DataManagement
 			Context = TableStorageContext.Instance;
 		}
 
-
-		private IQueryable<DetectionEntity> ReadDetection(string deviceIdentificator)
+		private IQueryable<DetectionEntity> ReadDetection()
 		{
-			IEnumerable<Guid> sequenceList = (from x in SequenceManager.GetSequence(deviceIdentificator)
-											  select x)
-												.ToList();
-			//SequenceManager.Clear(deviceIdentificator);
+			var val = CacheManager.GetValue("lastupdate");
+			DateTime lastUpdate = val == null ? DateTime.MinValue : (DateTime)val;
 
-			List<DetectionEntity> detectionList = new List<DetectionEntity>();
-			foreach (Guid seq in sequenceList)
-				detectionList.AddRange(
-					from x in Context.DetectionTable
-					where x.PartitionKey == seq.ToString()
-					select x);
+			if (lastUpdate == DateTime.MinValue)
+				lastUpdate = DateTime.Now.AddMinutes(-1);
 
-			return detectionList.AsQueryable<DetectionEntity>();
-
-			//return (from x in Context.DetectionTable
-			//		where sequenceList.Where(y => y == x.SequenceId).Count() > 0
-			//		select x).AsQueryable<DetectionEntity>();
-
-
+			return (from x in Context.DetectionTable
+					where x.InsertDateTime > lastUpdate
+					select x)
+					.AsQueryable();
 		}
 
-
-		public void SaveDetection(IEnumerable<Detection> detection, Guid sequenceId, string deviceIdentificator)
+		public IQueryable<DetectionResult> CalculateAVG()
 		{
-			List<DetectionEntity> detectionList = new List<DetectionEntity>();
-			foreach (Detection item in detection)
-			{
-				detectionList.Add(new DetectionEntity()
-					{
-						Id = Guid.NewGuid(),
-						SequenceId = sequenceId,
-						Value = item.Value,
-						TypeOfFrequency = item.TypeOfFrequency,
-					});
-			}
-
-			foreach (var item in detectionList)
-			{
-				Context.AddDetection(item);
-			}
-			Context.SaveChanges();
-			SequenceManager.AddSequence(sequenceId, deviceIdentificator);
-		}
-
-		public IQueryable<DetectionResult> CalculateAVG(string deviceIdentificator)
-		{
-			var detectionList = ReadDetection(deviceIdentificator);
+			var detectionList = ReadDetection();
 			var item = (from x in detectionList
 						group x by new { x.TypeOfFrequency } into grp
 						select new DetectionResult
@@ -92,9 +59,9 @@ namespace Pewpew.BrainMood.DataManagement
 			return item;
 		}
 
-		public IQueryable<Detection> CalculateStandardDerivation(string deviceIdentificator)
+		public IQueryable<Detection> CalculateStandardDerivation()
 		{
-			var detectionList = ReadDetection(deviceIdentificator);
+			var detectionList = ReadDetection();
 			var average = CalculateAVG(detectionList);
 			List<Detection> resultList = new List<Detection>();
 			object locker = new object();

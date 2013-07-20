@@ -63,10 +63,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CacheManager.cs" />
     <Compile Include="Calculator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="QueueStorageContext.cs" />
-    <Compile Include="SequenceManager.cs" />
     <Compile Include="TableStorageContext.cs" />
   </ItemGroup>
   <ItemGroup>
