@@ -16,20 +16,22 @@
 		<title>BrainMood</title>
 	</head>
 	<body>
-		<section class="main">
+		<section ng-controller="mainCtrl" class="main">
 			<div class="status">
 				<div class="mask"></div>
-				<img src="http://farm8.staticflickr.com/7106/7557578150_8249cf6b06_b.jpg" />
-				<aside>Artist - Title</aside>
+				<img class="show-{{isShown}}" ng-src="{{image}}" />
+				<img class="show-{{!isShown}}" ng-src="{{image2}}" />
+				<aside>{{artist}} - {{title}}</aside>
 			</div>
-			<section class="box img"></section>
+			<section class="box img">
+			</section>
 			<section class="box chart"></section>
 			<section class="icons">
-				<div class="icon color"></div>
-				<div class="icon mood"></div>
+				<div class="icon color" ng-style="{backgroundColor: color}"></div>
+				<div class="icon mood"><p>{{mood}}</p></div>
 			</section>
 			<section class="audio">
-				<audio src="http://tympanus.net/Development/AudioPlayer/audio/BlueDucks_FourFlossFiveSix.mp3" preload="auto" controls></audio>
+				<audio src="{{audio}}" preload="auto" controls></audio>
 			</section>
 		</section>
 	</body>
