@@ -30,7 +30,7 @@
 			return res;
 		}
 
-		var updateInterval = 3000;
+		var updateInterval = 5000;
 
 		var plot = $.plot("#chart", [ readNewValue() ], {
 			series: {
