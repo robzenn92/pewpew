@@ -19,40 +19,26 @@ namespace Pewpew.BrainMood.DataManagement
 		public static IQueryable<DetectionEntity> GetLastDetection()
 		{
 			List<DetectionEntity> result = new List<DetectionEntity>();
-			var values= (from y in Context.DetectionTable
-							 where y.TypeOfFrequency == 0
-							 select y.InsertDateTime).ToList();
-
-			long max = -1;
-			foreach (var y in values)
-			{
-				if (y > max)
-					max = y;
-			}
-			var item = (from x in Context.DetectionTable
-						where x.TypeOfFrequency == 0
-						   && x.InsertDateTime == max
-						select x).FirstOrDefault();
-			result.Add(item);
-
-			var values1 = (from y in Context.DetectionTable
-						   where y.TypeOfFrequency == 0
-						   select y.InsertDateTime).ToList();
-
+			DetectionEntity entity1 = null;
+			DetectionEntity entity2 = null;
+			long max0 = -1;
 			long max1 = -1;
-			foreach (var y in values1)
+			foreach (var item in Context.DetectionTable)
 			{
-				if (y > max1)
-					max1 = y;
+				if (item.TypeOfFrequency == 0)
+				{
+					if (max0 < item.InsertDateTime)
+						entity1 = item;
+				}
+				if (item.TypeOfFrequency == 1)
+				{
+					if (max0 < item.InsertDateTime)
+						entity2 = item;
+				}
 			}
-
-			var item1 = (from x in Context.DetectionTable
-						 where x.TypeOfFrequency == 0
-							&& x.InsertDateTime == max1
-						 select x).FirstOrDefault();
-			result.Add(item1);
-
-			return result.AsQueryable<DetectionEntity>();
+			result.Add(entity1);
+			result.Add(entity2);
+			return result.AsQueryable();
 		}
 
 		public static List<long> s { get; set; }
