@@ -13,13 +13,13 @@
 			}
 
 			// Leggo il dato
-			var values = { 
+			var values = {
 				meditazione: 0,
 				attenzione: 0
 			};
 
 			var res = [];
-			$.getJSON("https://github.com/robzenn92/pewpew/blob/master/frontend/file.json", function(asd) {
+			$.getJSON("/api/graph", function(asd) {
 				data.push(asd.meditazione);
 				j = 0;
 				for (var i = data.length - 1; i >= 0 ; i--) {

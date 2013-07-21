@@ -1,5 +1,5 @@
 <!DOCTYPE html5>
-<html ng-app>
+<html ng-app="brainMood">
 	<head>
 		<meta charset="utf-8" />
 		<meta name="apple-mobile-web-app-capable" content="yes" />
@@ -18,13 +18,12 @@
 		<title>BrainMood</title>
 	</head>
 	<body ng-controller="mainCtrl">
-		<aside>{{artist}} - {{title}}</aside>
+		<aside>{{mood.artist}} - {{mood.title}}</aside>
 		<section class="content">
 			<section class="main">
 				<div class="status">
 					<div class="mask"></div>
-					<img class="show-{{isShown}}" ng-src="{{image}}" />
-					<img class="show-{{!isShown}}" ng-src="{{image2}}" />
+					<img ng-src="{{mood.imageURL}}" />
 				</div>
 				<section class="box img">
 				</section>
@@ -32,13 +31,14 @@
 					<div id="chart"></div>
 				</section>
 				<section class="icons">
-					<div class="icon color" ng-style="{backgroundColor: color}"></div>
-					<div class="icon mood"><p>{{mood}}</p></div>
+					<div class="icon color" ng-style="{backgroundColor: mood.color}"></div>
+					<div class="icon mood"><p>{{mood.mood}}</p></div>
 				</section>
 			</section>
 		</section>
 		<section class="audio">
-			<audio src="{{audio}}" preload="auto" controls autoplay></audio>
+			<audio id="nextSong" style="display: none;" src="{{mood.songURL}}" preload="auto"></audio>
+			<audio id="currentSong" src="" controls></audio>
 		</section>
 	</body>
 </html>
