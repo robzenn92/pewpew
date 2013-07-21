@@ -68,7 +68,7 @@ namespace Pewpew.BrainMood.Stereo
 
             dynamic target = new JsonSerializer().Deserialize(reader);
 
-            if (SongIndexes[mood.ToString()] > target.total)
+            if (SongIndexes[mood.ToString()].CompareTo((Int32)target.total) >= 0)
             {
                 SongIndexes[mood.ToString()] = 0;
             }
