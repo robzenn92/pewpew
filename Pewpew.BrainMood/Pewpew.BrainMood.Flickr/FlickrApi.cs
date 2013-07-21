@@ -20,17 +20,17 @@ namespace ConsoleApplication1
 
             switch (mood)
             {
-                case "HAPPY":
-                    url = "http://ycpi.api.flickr.com/services/rest/?method=flickr.photos.search&api_key=95fe9d071e2410bf75ded644d8ccf757&tags=HAPPY&format=json&nojsoncallback=1&api_sig=c4828f6ac256321b9d0ec2dd021601bf";
+                case "FOCUSED":
+                    url = "http://ycpi.api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d80965d3b782413eb5323c654e2ad100&tags=FOCUSED&format=json&nojsoncallback=1&api_sig=23aae1d19aae09a984c5b5c59b906ac1";
                     break;
-                case "SAD":
-                    url = "http://ycpi.api.flickr.com/services/rest/?method=flickr.photos.search&api_key=95fe9d071e2410bf75ded644d8ccf757&tags=SAD&format=json&nojsoncallback=1&api_sig=593aa89d2cf912b57f55402d8d76f19f";
+                case "TOUGHTFUL":
+                    url = "http://ycpi.api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d80965d3b782413eb5323c654e2ad100&tags=TOUGHTFUL&format=json&nojsoncallback=1&api_sig=4f0ad8c117c8b42d12b626ed21d056c8";
                     break;
-                case "RELAXED":
-                    url = "http://ycpi.api.flickr.com/services/rest/?method=flickr.photos.search&api_key=95fe9d071e2410bf75ded644d8ccf757&tags=RELAXED&format=json&nojsoncallback=1&api_sig=3dd36f104cafe0b62d10f701bab17cdb";
+                case "CONTEMPLATIVE":
+                    url = "http://ycpi.api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d80965d3b782413eb5323c654e2ad100&tags=CONTEMPLATIVE&format=json&nojsoncallback=1&api_sig=fac045711a2b39c5e2e8f6c734effa00";
                     break;
-                case "CRAZY":
-                    url = "http://ycpi.api.flickr.com/services/rest/?method=flickr.photos.search&api_key=95fe9d071e2410bf75ded644d8ccf757&tags=mad&format=json&nojsoncallback=1&api_sig=40ac9387681b1d7c486c76d23278a842";
+                case "CONFUSED":
+                    url = "http://ycpi.api.flickr.com/services/rest/?method=flickr.photos.search&api_key=d80965d3b782413eb5323c654e2ad100&tags=CONFUSED&format=json&nojsoncallback=1&api_sig=8cc99d36d5654416a0a4624407a02743";
                     break;
                 default:
                     return null;
