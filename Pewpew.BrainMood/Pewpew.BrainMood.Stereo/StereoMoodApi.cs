@@ -50,10 +50,9 @@ namespace Pewpew.BrainMood.Stereo
         public string GetSong(Enum mood)
         {
             Random randomizer = new Random();
+            byte soundcloud = 0;
 
             int page = (int)randomizer.Next(0, TotalPages[mood.ToString()]);
-            int song = (int)randomizer.Next(0, 19);
-
 
             var url = string.Format(
                 "http://www.stereomood.com/api/search.json?api_key={0}&type=mood&q={1}&page={2}",
@@ -70,9 +69,18 @@ namespace Pewpew.BrainMood.Stereo
 
             dynamic target = new JsonSerializer().Deserialize(reader);
 
-            if (song.CompareTo((Int32)target.total) >= 0)
+            int song = -1;
+
+            while (soundcloud == 0)
             {
-                song = (int)randomizer.Next(0, (Int32)target.total);
+                song = (int)randomizer.Next(0, 19);
+
+                if (song.CompareTo((Int32)target.total) >= 0)
+                {
+                    song = (int)randomizer.Next(0, (Int32)target.total);
+                }
+
+                soundcloud = (byte)target.songs[song].soundcloud;
             }
 
             object jsonObject = new
