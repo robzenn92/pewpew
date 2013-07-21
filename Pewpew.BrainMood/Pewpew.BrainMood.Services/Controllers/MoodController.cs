@@ -1,4 +1,5 @@
-﻿using Pewpew.BrainMood.DataManagement;
+﻿using Newtonsoft.Json;
+using Pewpew.BrainMood.DataManagement;
 using Pewpew.BrainMood.Flickr;
 using Pewpew.BrainMood.Light;
 using Pewpew.BrainMood.ObjectModel.ServiceModel;
@@ -46,10 +47,24 @@ namespace Pewpew.BrainMood.Services.Controllers
 
             lightController.SetColorLamps(image.color);
 
+			var temp = new
+			{
+				Mood = "",
+				Title = "",
+				Url = "",
+				Artist = "",
+			};
+
+			var song = JsonConvert.DeserializeAnonymousType(songJSON, temp);
+
 			return new MoodRequestDTO()
 			{
-				SongJSON = songJSON,
-				ImageJSON = Newtonsoft.Json.JsonConvert.SerializeObject(image),
+				Mood = song.Mood,
+				Title = song.Title,
+				SongUrl = song.Url,
+				Artist = song.Artist,
+				ImageURL = imageURL,
+				Color = color
 			};
 
 		}
