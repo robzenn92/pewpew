@@ -92,6 +92,9 @@ namespace Pewpew.BrainMood.DataManagement
 			var attention = entities.FirstOrDefault(x => x.TypeOfFrequency == 0);
 			var meditation = entities.FirstOrDefault(x => x.TypeOfFrequency == 1);
 
+			attention = attention ?? new DetectionResult();
+			meditation = meditation ?? new DetectionResult();
+
 			if (attention.Average > 50 && meditation.Average > 50)
 				return Moods.type.CONFUSED;
 			else if (attention.Average < 50 && meditation.Average > 50)
@@ -99,7 +102,7 @@ namespace Pewpew.BrainMood.DataManagement
 			else if (attention.Average > 50 && meditation.Average < 50)
 				return Moods.type.FOCUSED;
 			else
-				return Moods.type.TOUGHTFUL;
+				return Moods.type.THOUGHTFUL;
 
 		}
 

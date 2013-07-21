@@ -21,13 +21,13 @@ namespace Pewpew.BrainMood.Stereo
 			SongIndexes["CONFUSED"] = 0;
 			SongIndexes["CONTEMPLATIVE"] = 0;
 			SongIndexes["FOCUSED"] = 0;
-			SongIndexes["TOUGHTFUL"] = 0;
+			SongIndexes["THOUGHTFUL"] = 0;
 
 			TotalPages = new Dictionary<string, int>();
-			TotalPages["CONFUSED"] = 76;
-			TotalPages["CONTEMPLATIVE"] = 67;
-			TotalPages["FOCUSED"] = 3;
-			TotalPages["TOUGHTFUL"] = 19;
+			TotalPages["CONFUSED"] = 1;
+			TotalPages["CONTEMPLATIVE"] = 4;
+			TotalPages["FOCUSED"] = 1;
+			TotalPages["THOUGHTFUL"] = 3;
 		}
 
 		public string GetSong(String mood) {
@@ -39,8 +39,8 @@ namespace Pewpew.BrainMood.Stereo
 					return this.GetSong(Moods.type.CONTEMPLATIVE);
 				case "FOCUSED":
 					return this.GetSong(Moods.type.FOCUSED);
-				case "TOUGHTFUL":
-					return this.GetSong(Moods.type.TOUGHTFUL);
+				case "THOUGHTFUL":
+					return this.GetSong(Moods.type.THOUGHTFUL);
 				default:
 					return null;
 			}

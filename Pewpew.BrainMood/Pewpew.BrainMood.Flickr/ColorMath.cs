@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Drawing;
 
-namespace ConsoleApplication1
+namespace Pewpew.BrainMood.Flickr
 {
     public class ColorMath
     {

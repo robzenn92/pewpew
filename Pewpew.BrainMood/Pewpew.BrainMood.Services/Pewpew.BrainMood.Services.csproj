@@ -178,6 +178,7 @@
     <Compile Include="Controllers\DataController.cs" />
     <Compile Include="Controllers\GraphController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MoodController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -309,9 +310,17 @@
       <Project>{9cd3b488-bcda-434e-ace3-db4973b8beb6}</Project>
       <Name>Pewpew.BrainMood.DataManagement</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Pewpew.BrainMood.Flickr\Pewpew.BrainMood.Flickr.csproj">
+      <Project>{2b2fa916-447c-4bc0-9a3e-112f2e2e0979}</Project>
+      <Name>Pewpew.BrainMood.Flickr</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Pewpew.BrainMood.ObjectModel\Pewpew.BrainMood.ObjectModel.csproj">
       <Project>{9947505a-7df2-4802-8687-37deeb8f19ff}</Project>
       <Name>Pewpew.BrainMood.ObjectModel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Pewpew.BrainMood.Stereo\Pewpew.BrainMood.Stereo.csproj">
+      <Project>{e18a66be-b82a-4a76-b8fe-6e235eaabf42}</Project>
+      <Name>Pewpew.BrainMood.Stereo</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

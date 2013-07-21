@@ -13,6 +13,9 @@ namespace Pewpew.BrainMood.ObjectModel.ServiceModel
 		/// </summary>
 		public string SongJSON { get; set; }
 
-		public int MyProperty { get; set; }
+		/// <summary>
+		/// Dettagli immagini
+		/// </summary>
+		public string ImageJSON { get; set; }
 	}
 }
