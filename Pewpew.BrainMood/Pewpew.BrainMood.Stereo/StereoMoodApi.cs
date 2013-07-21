@@ -51,7 +51,9 @@ namespace Pewpew.BrainMood.Stereo
         {
             Random randomizer = new Random();
 
-            int page = randomizer.Next(0, TotalPages[mood.ToString()]);
+            int page = (int)randomizer.Next(0, TotalPages[mood.ToString()]);
+            int song = (int)randomizer.Next(0, 19);
+
 
             var url = string.Format(
                 "http://www.stereomood.com/api/search.json?api_key={0}&type=mood&q={1}&page={2}",
@@ -68,17 +70,17 @@ namespace Pewpew.BrainMood.Stereo
 
             dynamic target = new JsonSerializer().Deserialize(reader);
 
-            if (SongIndexes[mood.ToString()].CompareTo((Int32)target.total) >= 0)
+            if (song.CompareTo((Int32)target.total) >= 0)
             {
-                SongIndexes[mood.ToString()] = 0;
+                song = (int)randomizer.Next(0, (Int32)target.total);
             }
 
             object jsonObject = new
             {
                 Mood = mood.ToString(),
-                Title = target.songs[SongIndexes[mood.ToString()]].title,
-                Url = target.songs[SongIndexes[mood.ToString()]].audio_url,
-                Artist = target.songs[SongIndexes[mood.ToString()]].artist
+                Title = target.songs[song].title,
+                Url = target.songs[song].audio_url,
+                Artist = target.songs[song].artist
             };
 
             SongIndexes[mood.ToString()] += 1;
