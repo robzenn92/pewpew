@@ -1,5 +1,6 @@
 ﻿using Pewpew.BrainMood.DataManagement;
 using Pewpew.BrainMood.Flickr;
+using Pewpew.BrainMood.Light;
 using Pewpew.BrainMood.ObjectModel.ServiceModel;
 using Pewpew.BrainMood.Stereo;
 using System;
@@ -40,6 +41,10 @@ namespace Pewpew.BrainMood.Services.Controllers
 			};
 
 			CacheManager.AddOrUpdate("lastupdate", DateTime.Now);
+
+            LightController lightController = new LightController();
+
+            lightController.SetColorLamps(image.color);
 
 			return new MoodRequestDTO()
 			{

@@ -317,6 +317,10 @@
       <Project>{2b2fa916-447c-4bc0-9a3e-112f2e2e0979}</Project>
       <Name>Pewpew.BrainMood.Flickr</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Pewpew.BrainMood.Light\Pewpew.BrainMood.Light.csproj">
+      <Project>{763b3b96-6cd9-4c99-b2c4-ad177186abc1}</Project>
+      <Name>Pewpew.BrainMood.Light</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Pewpew.BrainMood.ObjectModel\Pewpew.BrainMood.ObjectModel.csproj">
       <Project>{9947505a-7df2-4802-8687-37deeb8f19ff}</Project>
       <Name>Pewpew.BrainMood.ObjectModel</Name>

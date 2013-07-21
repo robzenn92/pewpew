@@ -16,12 +16,15 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pewpew.BrainMood.Balance", "Pewpew.BrainMood.Balance\Pewpew.BrainMood.Balance.csproj", "{468D9B0A-B832-4E04-AF36-01337BC54F0B}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pewpew.BrainMood.Flickr", "Pewpew.BrainMood.Flickr\Pewpew.BrainMood.Flickr.csproj", "{2B2FA916-447C-4BC0-9A3E-112F2E2E0979}"
+EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{A181EC1C-510A-49F3-BD8C-34050B521575}"
 	ProjectSection(SolutionItems) = preProject
 		.nuget\NuGet.Config = .nuget\NuGet.Config
 		.nuget\NuGet.exe = .nuget\NuGet.exe
 		.nuget\NuGet.targets = .nuget\NuGet.targets
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pewpew.BrainMood.Light", "Pewpew.BrainMood.Light\Pewpew.BrainMood.Light.csproj", "{763B3B96-6CD9-4C99-B2C4-AD177186ABC1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +64,10 @@ Global
 		{2B2FA916-447C-4BC0-9A3E-112F2E2E0979}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2B2FA916-447C-4BC0-9A3E-112F2E2E0979}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2B2FA916-447C-4BC0-9A3E-112F2E2E0979}.Release|Any CPU.Build.0 = Release|Any CPU
+		{763B3B96-6CD9-4C99-B2C4-AD177186ABC1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{763B3B96-6CD9-4C99-B2C4-AD177186ABC1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{763B3B96-6CD9-4C99-B2C4-AD177186ABC1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{763B3B96-6CD9-4C99-B2C4-AD177186ABC1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
