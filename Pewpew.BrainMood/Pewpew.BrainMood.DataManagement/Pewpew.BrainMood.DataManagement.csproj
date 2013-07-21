@@ -77,6 +77,10 @@
       <Project>{9947505a-7df2-4802-8687-37deeb8f19ff}</Project>
       <Name>Pewpew.BrainMood.ObjectModel</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Pewpew.BrainMood.Stereo\Pewpew.BrainMood.Stereo.csproj">
+      <Project>{e18a66be-b82a-4a76-b8fe-6e235eaabf42}</Project>
+      <Name>Pewpew.BrainMood.Stereo</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

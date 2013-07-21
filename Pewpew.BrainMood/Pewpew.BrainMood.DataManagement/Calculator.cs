@@ -1,5 +1,6 @@
 ﻿using Pewpew.BrainMood.ObjectModel;
 using Pewpew.BrainMood.ObjectModel.AzureModel;
+using Pewpew.BrainMood.Stereo;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -86,7 +87,21 @@ namespace Pewpew.BrainMood.DataManagement
 			return resultList.AsQueryable();
 		}
 
+		public Moods.type GetMood(IQueryable<DetectionResult> entities)
+		{
+			var attention = entities.FirstOrDefault(x => x.TypeOfFrequency == 0);
+			var meditation = entities.FirstOrDefault(x => x.TypeOfFrequency == 1);
 
+			if (attention.Average > 50 && meditation.Average > 50)
+				return Moods.type.CONFUSED;
+			else if (attention.Average < 50 && meditation.Average > 50)
+				return Moods.type.CONTEMPLATIVE;
+			else if (attention.Average > 50 && meditation.Average < 50)
+				return Moods.type.FOCUSED;
+			else
+				return Moods.type.TOUGHTFUL;
+
+		}
 
 	}
 }

@@ -10,10 +10,10 @@ namespace Pewpew.BrainMood.Stereo
     {
         public enum type
         {
-            HAPPY = 0,
-            SAD = 1,
-            RELAXED = 2,
-            CRAZY = 3,
+            TOUGHTFUL = 0,
+            FOCUSED = 1,
+            CONTEMPLATIVE = 2,
+            CONFUSED = 3,
         };
     }
 }

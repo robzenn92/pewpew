@@ -66,6 +66,7 @@
     <Compile Include="DetectionResult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceModel\DetectionDTO.cs" />
+    <Compile Include="ServiceModel\MoodRequestDTO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
